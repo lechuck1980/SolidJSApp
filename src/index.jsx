@@ -7,7 +7,7 @@ import App from "./App";
 const About = lazy(() => import("./components/About"));
 const Contact = lazy(() => import("./components/Contact"));
 
-import { Router, Routes, Route } from "@solidjs/router";
+import { Router } from "@solidjs/router";
 
 const root = document.getElementById("root");
 
@@ -21,11 +21,6 @@ render(
   () => (
     <>
       <Router>
-        <Routes>
-          <Route path="/" component={App} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
-        </Routes>
         <App />
       </Router>
     </>

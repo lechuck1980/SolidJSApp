@@ -1,28 +1,23 @@
 
-import styles from "./App.module.css";
-import { A } from "@solidjs/router";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
+import { Routes, Route } from "@solidjs/router";
+import Contact from "./components/Contact";
+import About from "./components/About";
+import Services from "./components/Services";
 
 function App() {
   return (
     <>
-      <div >
-        <header >
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            
-            href="https://github.com/solidjs/solid"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn Solid
-          </a>
-          <A href="/about">About</A> 
-          <A href="/contact">Contact</A>
-          
-        </header>
-      </div>
+      <Header />
+      <Routes>
+          <Route path="/" component={Home} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/about" component={About} />
+          <Route path="/services" component={Services} />
+      </Routes>
+      <Footer />
     </>
   );
 }
